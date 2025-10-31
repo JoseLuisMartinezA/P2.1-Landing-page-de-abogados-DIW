@@ -1,0 +1,214 @@
+/* Colors */
+:root {
+  /* Mode 1 */
+  /* color */
+  --auxiliary-acentos-1: #c55a26;
+  --auxiliary-acentos-2: #e3be86;
+  --auxiliary-hover: #faa82a;
+  --basics-black: #000000;
+  --basics-white: #f1f0ea;
+  --primary-fondo: var(--basics-white);
+  --primary-secciones-1: #112c50;
+  --secondary-secciones-2: #b9cade;
+  --secondary-secciones-3: #d7c2b6;
+  --text-on-dark: var(--basics-white);
+  --text-primary: var(--basics-black);
+}
+/* Typography */
+:root {
+  /* Mode 1 */
+  /* number */
+  --size-button-text: 0.875rem;
+  --size-parrafo: 1rem;
+  --size-h4: 1.125rem;
+  --size-texto-destacado: 1.25rem;
+  --size-h3: 2rem;
+  --size-h2: 2.25rem;
+  --size-h1: 3.4375rem;
+  /* string */
+  --weight-parrafo: Regular;
+}
+/* Borders-SIzes */
+:root {
+  /* Mode 1 */
+  /* number */
+  --radius-button-radius: 0.625rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* BASE WRAPPER Y GRID (Sólo Layout) */
+.wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    background-color: #112c50;
+}
+
+/*HEADER*/
+
+/* ================================== */
+/* BASE STYLES Y WRAPPER (EXISTENTE)  */
+/* ================================== */
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--primary-fondo);
+    color: var(--text-primary);
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--radius-button-radius);
+    font-size: var(--size-button-text);
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+.btn.secondary {
+    background-color: var(--auxiliary-acentos-1); /* Naranja/Rojo Oscuro */
+    color: var(--text-on-dark);
+}
+.btn.secondary:hover {
+    background-color: var(--auxiliary-hover); /* Naranja Brillante */
+}
+.btn.primary {
+    background-color: var(--auxiliary-acentos-2); /* Beige claro (como en la imagen) */
+    color: var(--primary-secciones-1); /* Texto azul oscuro */
+}
+.btn.primary:hover {
+    background-color: var(--auxiliary-hover);
+    color: var(--primary-secciones-1);
+}
+
+/* ================================== */
+/* ESTILOS DEL HEADER/HERO            */
+/* ================================== */
+
+.hero {
+    /* 1. Establecer fondo y posición para la imagen */
+    background-color: var(--primary-secciones-1); /* Fondo Azul Oscuro */
+    background-image: url('assets/img/hero-bg.jpg'); /* RUTA DUMMY: Reemplazar con la ruta de la imagen del abogado */
+    background-size: cover;
+    background-position: 50% 35%; /* Ajuste para centrar al abogado */
+    min-height: 550px; /* Altura mínima para que se vea el contenido */
+    position: relative;
+    color: var(--text-on-dark);
+}
+
+/* Asegura que todo el contenido del header esté por encima de la imagen de fondo */
+.top-bar, nav, .hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background-color: var(--primary-secciones-1); /* Fila superior azul oscuro sólido */
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-bar-content {
+    /* Usamos Flexbox para alinear a la derecha como se ve en la imagen */
+    max-width: 1500px; /* Un ancho mayor es más fiel a la imagen */
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: flex-end; /* Alinear a la derecha */
+    gap: 50px;
+    font-size: 0.8rem;
+}
+
+.top-bar-content a, .top-bar-content span {
+    color: var(--text-on-dark);
+    opacity: 0.8;
+}
+
+.top-bar-content a:first-child {
+    margin-right: auto; /* Empuja los elementos de contacto a la derecha */
+}
+
+
+/* --- Navegación Principal --- */
+nav {
+    max-width: 1500px;
+    margin: 0 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo figure img {
+    height: 35px; /* Tamaño del Logo*/
+}
+
+.nav-links {
+    display: flex;
+    gap: 65px;
+    font-size: var(--size-parrafo);
+}
+
+.nav-links a {
+    color: var(--text-on-dark);
+    font-weight: 500;
+}
+
+
+/* --- Contenido del Hero (Texto y Botones) --- */
+.hero-content {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 50px 15px;
+    /* Grid para posicionar el texto en el lado izquierdo del contenedor */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.hero-content p, .hero-content h1 {
+    grid-column: 1 / 7; /* El texto ocupa las primeras 6 columnas (mitad izquierda) */
+    color: var(--text-on-dark);
+}
+
+.hero-content .highlight {
+    font-weight: bold;
+}
+
+.hero-content h1 {
+    font-size: var(--size-h1);
+    line-height: 1.1;
+    margin: 10px 0 20px 0;
+}
+
+.hero-content p {
+    font-size: var(--size-parrafo);
+    margin-bottom: 30px;
+    max-width: 450px; /* Limita el ancho del párrafo */
+}
+
+.hero-buttons {
+    grid-column: 1 / 7; /* Los botones siguen ocupando la mitad izquierda */
+    margin-top: -15px; /* Para acercar a la descripción */
+}
+
+.hero-buttons .btn {
+    margin-right: 15px;
+    padding: 10px 20px; /* Ligeramente más pequeños que los botones base */
+}
