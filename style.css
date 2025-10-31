@@ -150,7 +150,7 @@ ul {
 /* --- Navegación Principal --- */
 nav {
     max-width: 1500px;
-    margin: 0 90px;
+    margin: 0 180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -273,7 +273,7 @@ nav {
     height: auto;
 }
 
-/* About Services */
+/* Services seccion */
 
 .services {
     background-image: url('assets/img/techo-cristal.jpg'); 
@@ -310,4 +310,76 @@ nav {
 .services .btn.secondary {
     background-color: var(--auxiliary-acentos-1);
     color: var(--text-on-dark);
+}
+
+/* Testimonials seccion */
+
+.team {
+    background-color: var(--primary-fondo);
+    padding: 100px 90px;
+    
+    max-width: 1500px; 
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 100px; 
+    align-items: flex-start; 
+}
+
+/* --- Título (Columna Izquierda) --- */
+.team h3 {
+    grid-column: span 4; /* Ocupa 4 de 12 columnas */
+    font-size: var(--size-h2);
+    color: var(--text-primary); 
+    line-height: 1.2;
+    margin-top: 20px; /* Separación debajo del elemento decorativo */
+    margin-bottom: 30px; /* Espacio antes del botón (si existe) */
+}
+
+/* Línea decorativa azul sobre el h3 */
+.team h3::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 7px;
+    background-color: var(--primary-secciones-1); 
+    margin-bottom: 20px;
+}
+
+/* --- Contenedor de Miembros (Columna Derecha) --- */
+.team-members {
+    grid-column: 5 / 13; 
+    
+    background-color: var(--secondary-secciones-2); 
+    border-radius: var(--radius-button-radius);
+    padding: 30px;
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* Estilo de cada tarjeta (article) */
+.team-members article {
+    padding: 10px;
+}
+
+.team-members article img {
+    width: 100%;
+    margin-bottom: 5px;
+    object-fit: cover;
+    height: 200px; 
+    display: block;
+}
+
+.team-members article h4 {
+    font-size: var(--size-h4);
+    color: var(--primary-secciones-1);
+    margin: 0px;
+}
+
+.team-members article p {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.4;
 }
