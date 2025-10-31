@@ -212,3 +212,102 @@ nav {
     margin-right: 15px;
     padding: 10px 20px; /* Ligeramente más pequeños que los botones base */
 }
+
+
+/* About Section */
+
+.about {
+    background-color: var(--primary-fondo);
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 80px 90px;
+    display: grid;
+    /* Divide el espacio en dos columnas (columna de 6/12 para texto, 6/12 para imagen) */
+    grid-template-columns: repeat(12, 1fr);
+    gap: 100px; 
+    align-items: center; 
+}
+
+/* --- Cosa decorativa de encima del titulo del articulo --- */
+.about h2::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 7px;
+    background-color: var(--primary-secciones-1); 
+    margin-bottom: 20px;
+}
+
+.about article {
+
+    grid-column: span 6;
+}
+
+.about h2 {
+    font-size: var(--size-h2);
+    color: var(--text-primary); 
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.about p {
+    font-size: var(--size-parrafo);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about article .btn.primary {
+    background-color: var(--auxiliary-acentos-2); 
+    color: var(--basics-black); 
+    margin-top: 10px;
+}
+
+.about aside {
+    grid-column: span 6;
+}
+
+.about aside img {
+    width: 100%;
+    border-radius: var(--radius-button-radius); 
+    display: block;
+    height: auto;
+}
+
+/* About Services */
+
+.services {
+    background-image: url('assets/img/techo-cristal.jpg'); 
+    background-size: cover; /* Para que la uimagen no se rtepita */
+    display: grid;
+    text-align: center; 
+    justify-content: center;
+    background-color: var(--primary-secciones-1);
+    color: var(--text-on-dark); 
+    padding: 100px;
+}
+
+.services h3, .services p, .services .btn {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services h3 {
+    font-size: var(--size-h1); 
+    line-height: 1.1;
+    color: var(--text-on-dark); 
+    margin: 0px;
+}
+
+.services p {
+    font-size: var(--size-h4); /* Párrafo ligeramente destacado */
+    line-height: 1.4;
+    color: var(--text-on-dark);
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+.services .btn.secondary {
+    background-color: var(--auxiliary-acentos-1);
+    color: var(--text-on-dark);
+}
